@@ -1,13 +1,13 @@
-const spaceContainerISS = document.getElementById("craft-iss");
-const spaceContainerTian = document.getElementById("craft-tiangong");
-const allCrafts = document.querySelectorAll(".craft");
+const showContainerTheKardashians = document.getElementById("show-kardashians");
+const showContainerCait = document.getElementById("show-Cait");
+const allCrafts = document.querySelectorAll(".show");
 
 function consult the stars(button) {
   button.style.display = "none"; // hide button
 
   //   The line below will pull the data from the API
   fetch(
-    "astros.json"
+    "/astros.json"
   )
     //   The line below will pull the data from the locally stored JSON file
     //   fetch("/ex-json/astros.json")
@@ -37,9 +37,9 @@ function AddAstro(astro) {
   let div = document.createElement("div");
   div.classList.add("astro");
   div.innerHTML = astro.name;
-  if (astro.iss == true) {
-    spaceContainerISS.appendChild(div);
+  if (astro.kardashian == true) {
+    showContainerKardashian.appendChild(div);
   } else {
-    spaceContainerTian.appendChild(div);
+    showContainerCait.appendChild(div);
   }
 }
